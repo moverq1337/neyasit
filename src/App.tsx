@@ -1,11 +1,14 @@
 import { Spinner } from '@nextui-org/spinner'
 import { motion } from 'motion/react'
-import './App.css'
+import './index.css'
 
 function App() {
 	return (
 		<div>
-			<motion.h1 animate={{ rotate: 360 }} className='text-red-700 text-big'>
+			<motion.h1
+				animate={{ rotate: 360 }}
+				className='text-red-700 text-cardtitle'
+			>
 				hello
 			</motion.h1>
 			<Spinner />
