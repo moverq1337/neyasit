@@ -16,13 +16,13 @@ const LeftNav = () => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
 	const menuItems = [
-		{ icon: BookMinus, text: 'Личный кабинет' },
-		{ icon: Library, text: 'Библиотека' },
-		{ icon: Mail, text: 'Мои курсы' },
-		{ icon: BookOpen, text: 'Домашнее задание' },
-		{ icon: CalendarDays, text: 'Расписание' },
-		{ icon: MessageSquare, text: 'Чат' },
-		{ icon: Settings, text: 'Настройки' },
+		{ icon: BookMinus, text: 'Личный кабинет', route: '/mycab' },
+		{ icon: Library, text: 'Библиотека', route: '/library' },
+		{ icon: Mail, text: 'Мои курсы', route: '/mycourses' },
+		{ icon: BookOpen, text: 'Домашнее задание', route: '/homework' },
+		{ icon: CalendarDays, text: 'Расписание', route: '/schedule' },
+		{ icon: MessageSquare, text: 'Чат', route: '/chat' },
+		{ icon: Settings, text: 'Настройки', route: '/settings' },
 	]
 
 	const bottomItems = [
@@ -57,7 +57,7 @@ const LeftNav = () => {
 					{menuItems.map((item, index) => (
 						<a
 							key={index}
-							href='#'
+							href={item.route}
 							className={`flex items-center px-4 py-3 my-4 rounded-lg transition-all duration-300 group relative ${
 								activeIndex === index
 									? 'bg-selectedLinkNav shadow-lg shadow-selectedLinkNav text-black'

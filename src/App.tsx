@@ -1,16 +1,15 @@
-import LeftNav from './components/LeftNav'
-import CourseData from './course-data/course-data'
+import { Route, Routes } from 'react-router-dom'
 import './index.css'
+import MyCab from './pages/my-cab'
+import NotFound from './pages/NotFound'
 
 function App() {
 	return (
-		<div>
-			<div className='absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'></div>
-			<div className='px-4 py-8'>
-				<LeftNav />
-				<CourseData />
-			</div>
-		</div>
+		<Routes>
+			<Route path='/' element={<MyCab />} />
+			<Route path='/notfound' element={<NotFound />} />
+			<Route path='/mycab' element={<MyCab />} />
+		</Routes>
 	)
 }
 
