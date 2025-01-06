@@ -12,6 +12,7 @@
   "dependencies": {
     "@nextui-org/react": "^2.6.11",
     "@nextui-org/spinner": "^2.2.6",
+    "axios": "^1.7.9",
     "framer-motion": "^11.16.0",
     "lucide-react": "^0.469.0",
     "motion": "^11.16.0",
