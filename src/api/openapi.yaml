@@ -1,0 +1,282 @@
+openapi: 3.0.0
+info:
+  title: Course Management API
+  version: 1.0.0
+  description: API for managing courses, modules, and lessons.
+tags:
+  - name: Courses
+    description: Operations related to courses
+  - name: Modules
+    description: Operations related to modules
+  - name: Lessons
+    description: Operations related to lessons
+paths:
+  /courses:
+    get:
+      tags:
+      - Courses
+      summary: Get all courses
+      responses:
+        '200':
+          description: List of courses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+    post:
+      tags:
+      - Courses
+      summary: Create a new course
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '201':
+          description: Course created
+  /courses/{courseId}:
+    get:
+      tags:
+      - Courses
+      summary: Get course by ID
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Course details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '404':
+          description: Course not found
+    put:
+      tags:
+      - Courses
+      summary: Update course by ID
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Course'
+      responses:
+        '200':
+          description: Course updated
+        '404':
+          description: Course not found
+    delete:
+      tags:
+      - Courses
+      summary: Delete course by ID
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Course deleted
+        '404':
+          description: Course not found
+  /courses/{courseId}/modules:
+    get:
+      tags:
+      - Modules
+      summary: Get modules of a course
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of modules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+    post:
+      tags:
+      - Modules
+      summary: Add a module to a course
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Module'
+      responses:
+        '201':
+          description: Module created
+
+  /courses/{courseId}/modules/{moduleId}:
+    delete:
+      tags:
+      - Modules
+      summary: Delete module
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Module deleted
+  /modules/{moduleId}/lessons:
+    get:
+      tags:
+      - Lessons
+      summary: Get lessons of a module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of lessons
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Lesson'
+    post:
+      tags:
+      - Lessons
+      summary: Add a lesson to a module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Lesson'
+      responses:
+        '201':
+          description: Lesson created
+  
+  /modules/{moduleId}/lessons/{lessonId}:
+    delete:
+      tags:
+      - Lessons
+      summary: Delete lesson
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: lessonId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lesson deleted
+components:
+  schemas:
+    Course:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the course
+        title:
+          type: string
+          description: Title of the course
+        description:
+          type: string
+          description: Description of the course
+        photoId:
+          type: string
+          description: Photo ID for the course
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Module:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the module
+        title:
+          type: string
+          description: Title of the module
+        description:
+          type: string
+          description: Description of the module
+        photoId:
+          type: string
+          description: Photo ID for the module
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Lesson:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the lesson
+        title:
+          type: string
+          description: Title of the lesson
+        description:
+          type: string
+          description: Description of the lesson
+        photoId:
+          type: string
+          description: Photo ID for the lesson
+        videoUrl:
+          type: string
+          description: URL to the lesson video
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
