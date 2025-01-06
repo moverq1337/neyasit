@@ -1,5 +1,5 @@
 import { Configuration } from 'src/api/gen/configuration'
-import {CoursesApi, ModulesApi} from 'src/api/gen'
+import {CoursesApi, LessonsApi, ModulesApi} from 'src/api/gen'
 
 
 export const apiConfig = new Configuration({
@@ -9,3 +9,4 @@ export const apiConfig = new Configuration({
 
 export const coursesClient = new CoursesApi(apiConfig)
 export const modulesClient = new ModulesApi(apiConfig)
+export const lessonsClient = new LessonsApi(apiConfig)
