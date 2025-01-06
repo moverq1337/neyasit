@@ -40,6 +40,7 @@ module.exports = {
 						white: '#FFFFFF',
 						black: '#000000',
 						navColor: '#0D1618',
+						selectedLinkNav: '#96FFF8',
 					},
 				},
 			},
