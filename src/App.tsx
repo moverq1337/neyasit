@@ -4,12 +4,12 @@ import './App.css'
 
 function App() {
 	return (
-		<>
-			<motion.h1 animate={{ rotate: 360 }} className='text-red-700'>
+		<div>
+			<motion.h1 animate={{ rotate: 360 }} className='text-red-700 text-big'>
 				hello
 			</motion.h1>
 			<Spinner />
-		</>
+		</div>
 	)
 }
 
