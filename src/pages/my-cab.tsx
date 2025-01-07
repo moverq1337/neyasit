@@ -1,5 +1,5 @@
 import CoursesList from 'src/course-data/course-data'
-import Layout from 'src/layout/layout'
+import Layout from '../layout/Layout'
 
 const MyCab = () => {
 	return (
