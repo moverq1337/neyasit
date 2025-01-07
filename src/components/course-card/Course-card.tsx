@@ -1,6 +1,5 @@
-import { Card, CardBody, CardFooter } from '@nextui-org/react'
+import { Card, CardBody } from '@nextui-org/react'
 import { Play } from 'lucide-react'
-import CustomButton from '../button/CustomButton'
 
 type Props = {
 	image: React.ReactNode
@@ -13,7 +12,8 @@ type Props = {
 const CourseCard: React.FC<Props> = props => {
 	return (
 		<Card
-			className={`relative rounded-2xl bg-[#0D1618] shadow-[0px_0px_30px_2px_#343C25] w-96 mt-10 ${props.className}`}
+			className={`w-full max-w-[26.25rem] h-[22.3125rem] relative rounded-2xl bg-[#0D1618] shadow-[0_0_1.875rem_0.125rem_#343C25] 
+            mt-[0.625rem] ml-[0.9375rem] ${props.className}`}
 		>
 			<CardBody className='p-4'>
 				<div className='relative'>
@@ -22,23 +22,10 @@ const CourseCard: React.FC<Props> = props => {
 						<Play size={50} className='text-white' />
 					</button>
 				</div>
-				<div className='mt-4 text-white text-[20px] font-normal leading-[17px] tracking-[0.6px]'>
-					{props.title}
-				</div>
-				<div className='mt-4 text-[#AAA] text-[10px] font-normal leading-[11px] tracking-[0.3px]'>
-					{props.description}
-				</div>
-				<div className='flex items-center justify-between mt-6'>
-					<div className='text-[#FFF] font-normal text-[14px] leading-[17px] tracking-[0.42px]'>
-						{props.price}
-					</div>
-					<CustomButton variant='solid' color='primary'>
-						Buy Now
-					</CustomButton>
-				</div>
+				<h2 className='text-xl font-bold text-white mt-4'>{props.title}</h2>
+				<p className='text-sm text-gray-400'>{props.description}</p>
+				<p className='text-lg font-semibold text-white mt-2'>{props.price}</p>
 			</CardBody>
-
-			<CardFooter></CardFooter>
 		</Card>
 	)
 }

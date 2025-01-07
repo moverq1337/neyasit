@@ -17,17 +17,10 @@ const CoursesList: React.FC = () => {
 				'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
 			price: '$100',
 		},
-		{
-			img: <img src={card2} alt='card2' />,
-			title: 'Основы web-разработки',
-			description:
-				'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-			price: '$100',
-		},
 	]
 
 	return (
-		<div className='grid grid-cols-4 gap-56'>
+		<div className='grid grid-cols-3 gap-10 ml-5'>
 			{courses.map((el, index) => (
 				<CourseCard
 					key={index}
