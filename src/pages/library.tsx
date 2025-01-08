@@ -1,17 +1,17 @@
-import ContiniueStudy from 'src/components/continiueStudy/ContiniueStudy'
-import CoursesList from 'src/course-data/course-data'
+import CourseInfo from 'src/components/courseInfo/CourseInfo'
 import Layout from '../layout/Layout'
 
 const Library = () => {
 	return (
 		<Layout>
-			<ContiniueStudy
-				title='Продолжить обучение'
+			<CourseInfo
 				courseName='php'
-				description='Какой классный курс'
-				progress={80}
+				language='русский'
+				modules={0}
+				hours={0}
+				exam={0}
+				certificate={false}
 			/>
-			<CoursesList />
 		</Layout>
 	)
 }
