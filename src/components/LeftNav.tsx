@@ -32,7 +32,7 @@ const LeftNav = () => {
 
 	return (
 		<div
-			className={`transition-all duration-300 bg-navColor p-6 rounded-3xl text-white shadow-xl ${
+			className={`transition-all duration-300 bg-navColor p-6 mt-8 rounded-3xl text-white shadow-xl ${
 				isOpen ? 'max-w-[20.625rem]' : 'max-w-[7rem]'
 			} h-[calc(100vh-4rem)] flex flex-col justify-between`}
 		>

@@ -7,12 +7,12 @@ type Props = {
 
 const Header: React.FC<Props> = ({ title }) => {
 	return (
-		<div className='flex items-center justify-between'>
+		<div className='mx-10 flex items-center justify-between'>
 			<h1 className='text-white text-[1.875rem] font-bold '>{title}</h1>
 			<Input
 				label='Search'
-				className='w-[18.75rem] h-[3.125rem] rounded-[1.25rem]'
-			/>
+				className='w-[18.75rem] h-[2.5rem] bg-red-400 text-transparent rounded-[1.25rem]'
+			></Input>
 			<User
 				className='text-white'
 				avatarProps={{
